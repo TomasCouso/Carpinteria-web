@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Proyecto - Carpintería Artesanal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Carpintería Artesanal</h1>
+                <p class="tagline">Tradiciones que perduran en la madera</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="categorias.html">Categorías</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Detail -->
+    <section class="project-detail">
+        <div class="container">
+            <div class="project-detail-content" id="project-detail-container">
+                <!-- Project details will be loaded here by JavaScript -->
+            </div>
+            
+            <div class="project-contact">
+                <h3>¿Te interesa este proyecto?</h3>
+                <p>Contáctanos para una cotización personalizada o para crear tu propio diseño inspirado en este trabajo.</p>
+                <a href="https://wa.me/5491123456789" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Projects -->
+    <section class="related-projects">
+        <div class="container">
+            <h2>Proyectos Relacionados</h2>
+            <div class="projects-grid" id="related-projects">
+                <!-- Related projects will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Carpintería Artesanal</h3>
+                    <p>Trabajos de calidad con más de 30 años de experiencia en el arte de la madera.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="categorias.html">Categorías</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +54 9 11 2345-6789</p>
+                    <p><i class="fab fa-whatsapp"></i> +54 9 11 2345-6789</p>
+                    <p><i class="fas fa-envelope"></i> info@carpinteriaartesanal.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Carpintería Artesanal. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Get project ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+        
+        if (projectId) {
+            loadProjectDetail(projectId);
+        } else {
+            document.getElementById('project-detail-container').innerHTML = `
+                <h2>Proyecto no encontrado</h2>
+                <p>Lo sentimos, no pudimos encontrar el proyecto solicitado.</p>
+                <a href="categorias.html" class="btn btn-primary">Ver todos los proyectos</a>
+            `;
+        }
+    </script>
+</body>
+</html>

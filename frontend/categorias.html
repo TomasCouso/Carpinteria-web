@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías - Carpintería Artesanal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Carpintería Artesanal</h1>
+                <p class="tagline">Tradiciones que perduran en la madera</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="categorias.html" class="active">Categorías</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Category Header -->
+    <section class="category-header">
+        <div class="container">
+            <h1>Nuestros Trabajos</h1>
+            <p>Descubra nuestros proyectos organizados por categoría</p>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="category-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">Todos</button>
+                <button class="filter-btn" data-category="cocina">Cocina</button>
+                <button class="filter-btn" data-category="dormitorio">Dormitorio</button>
+                <button class="filter-btn" data-category="living">Living</button>
+                <button class="filter-btn" data-category="baño">Baño</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects">
+        <div class="container">
+            <div class="projects-grid" id="projects-container">
+                <!-- Projects will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Banner -->
+    <section class="contact-banner">
+        <div class="container">
+            <h2>¿Interesado en alguno de nuestros trabajos?</h2>
+            <p>Contáctanos para una cotización personalizada o para crear tu propio diseño</p>
+            <a href="https://wa.me/5491123456789" class="btn btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Carpintería Artesanal</h3>
+                    <p>Trabajos de calidad con más de 30 años de experiencia en el arte de la madera.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="categorias.html">Categorías</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +54 9 11 2345-6789</p>
+                    <p><i class="fab fa-whatsapp"></i> +54 9 11 2345-6789</p>
+                    <p><i class="fas fa-envelope"></i> info@carpinteriaartesanal.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Carpintería Artesanal. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Get category from URL parameter if exists
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('categoria');
+        
+        if (category) {
+            // Filter by category
+            filterProjects(category);
+        } else {
+            // Load all projects
+            loadProjects();
+        }
+    </script>
+</body>
+</html>
